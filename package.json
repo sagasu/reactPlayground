@@ -1,0 +1,22 @@
+{
+  "name": "react-playground",
+  "version": "1.0.0",
+  "description": "playground for various react stuff",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./simple/add.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sagasu/reactPlayground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sagasu/reactPlayground/issues"
+  },
+  "homepage": "https://github.com/sagasu/reactPlayground#readme",
+  "devDependencies": {
+    "mocha": "^2.5.3"
+  }
+}
