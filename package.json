@@ -9,7 +9,8 @@
     "test-helloWorldHarmony": "mocha  --harmony --harmony-proxies ./helloWorld/HelloWorld.spec.js",
     "test-helloWorld": "mocha --compilers js:babel-register ./helloWorld/HelloWorld.spec.js",
     "test-helloWorldChaiJsx": "mocha --compilers js:babel-register ./helloWorldChaiJsx/HelloWorld.spec.js",
-    "test-helloWorldEnzyme": "mocha --compilers js:babel-register ./helloWorldEnzyme/HelloWorld.spec.js"
+    "test-helloWorldEnzyme": "mocha --compilers js:babel-register ./helloWorldEnzyme/HelloWorld.spec.js",
+    "test-helloWorldChaiEnzyme": "mocha --compilers js:babel-register ./helloWorldChaiEnzyme/HelloWorld.spec.js"
   },
   "repository": {
     "type": "git",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
+    "chai-enzyme": "^0.4.2",
     "enzyme": "^2.3.0",
     "jsx-chai": "^4.0.0",
     "mocha": "^2.5.3",
