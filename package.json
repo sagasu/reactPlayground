@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test-simple": "mocha ./simple/add.spec.js",
-    "test-chai": "mocha ./chaiUsed/add.spec.js"
+    "test-chai": "mocha ./chaiUsed/add.spec.js",
+    "test-helloWorldHarmony": "mocha  --harmony --harmony-proxies ./helloWorld/HelloWorld.spec.js",
+    "test-helloWorld": "mocha --compilers js:babel-register ./helloWorld/HelloWorld.spec.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +20,10 @@
   },
   "homepage": "https://github.com/sagasu/reactPlayground#readme",
   "devDependencies": {
+    "babel-preset-react": "^6.5.0",
     "chai": "^3.5.0",
-    "mocha": "^2.5.3"
+    "mocha": "^2.5.3",
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0"
   }
 }

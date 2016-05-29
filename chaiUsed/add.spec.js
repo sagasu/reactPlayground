@@ -5,7 +5,7 @@ const expect = chai.expect
 const assert = chai.assert
 
 describe('add function', () => {
-    it('shold add two numbers together correctly', () => {
+    it('should add two numbers together correctly', () => {
 
         // BDD "should" style
         add(1,2).should.equal(3)

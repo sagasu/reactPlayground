@@ -1,7 +1,7 @@
 const add = require('./add')
 
 describe('add function', () => {
-    it('shold add two numbers together correctly', () => {
+    it('should add two numbers together correctly', () => {
 
         debugger;
         if(add(1,2) !== 3){
