@@ -4,7 +4,8 @@
   "description": "playground for various react stuff",
   "main": "index.js",
   "scripts": {
-    "test": "mocha ./simple/add.spec.js"
+    "test-simple": "mocha ./simple/add.spec.js",
+    "test-chai": "mocha ./chaiUsed/add.spec.js"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,7 @@
   },
   "homepage": "https://github.com/sagasu/reactPlayground#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
     "mocha": "^2.5.3"
   }
 }
