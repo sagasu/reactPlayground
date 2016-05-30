@@ -1,3 +1,5 @@
-var App = console.log('Hello world from Browserify')
+$ = jQuery = require('jquery'); // unfortunately bootstrap requires jquery to be acesable globally :(
 
-module.exports = App
+var App = console.log('Hello world from Browserify');
+
+module.exports = App;
