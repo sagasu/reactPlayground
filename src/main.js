@@ -2,11 +2,12 @@ $ = jQuery = require('jquery'); // unfortunately bootstrap requires jquery to be
 var React = require('react');
 var Home = require('./components/homePage');
 var About = require('./components/about/aboutPage');
+var Header = require('./components/common/header');
 
 // a way to have use strict in a block of a code IIFE
 // the reason why it can not be global is because of global jQuery assignment
 (function (win) {
-    "use strict"
+    "use strict";
 
     var App = React.createClass({
         // You can not use arrow function here, because this version of react has problems with handling es6
@@ -22,9 +23,10 @@ var About = require('./components/about/aboutPage');
             }
             return (
                 <div>
+                    <Header/>
                     <Child/>
                 </div>
-            )
+            );
         }
     });
 

@@ -29056,6 +29056,31 @@ module.exports = About;
 
 var React = require('react');
 
+var Header = React.createClass({displayName: "Header",
+    render: function() {
+        return (
+            React.createElement("nav", {className: "navbar navbar-default"}, 
+                React.createElement("div", {className: "container-fluid"}, 
+                    React.createElement("a", {href: "/", className: "navbar-brand"}, 
+                        React.createElement("img", {src: "images/superman-logo-014.png"})
+                    ), 
+                    React.createElement("ul", {className: "nav navbar-nav"}, 
+                        React.createElement("li", null, React.createElement("a", {href: "/"}, "Home")), 
+                        React.createElement("li", null, React.createElement("a", {href: "/#about"}, "About"))
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = Header;
+
+},{"react":157}],160:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
 var Home = React.createClass({displayName: "Home",
    render: function() {
        return (
@@ -29069,16 +29094,17 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":157}],160:[function(require,module,exports){
+},{"react":157}],161:[function(require,module,exports){
 $ = jQuery = require('jquery'); // unfortunately bootstrap requires jquery to be acesable globally :(
 var React = require('react');
 var Home = require('./components/homePage');
 var About = require('./components/about/aboutPage');
+var Header = require('./components/common/header');
 
 // a way to have use strict in a block of a code IIFE
 // the reason why it can not be global is because of global jQuery assignment
 (function (win) {
-    "use strict"
+    "use strict";
 
     var App = React.createClass({displayName: "App",
         // You can not use arrow function here, because this version of react has problems with handling es6
@@ -29094,9 +29120,10 @@ var About = require('./components/about/aboutPage');
             }
             return (
                 React.createElement("div", null, 
+                    React.createElement(Header, null), 
                     React.createElement(Child, null)
                 )
-            )
+            );
         }
     });
 
@@ -29110,4 +29137,4 @@ var About = require('./components/about/aboutPage');
     render();
 }(window));
 
-},{"./components/about/aboutPage":158,"./components/homePage":159,"jquery":1,"react":157}]},{},[160]);
+},{"./components/about/aboutPage":158,"./components/common/header":159,"./components/homePage":160,"jquery":1,"react":157}]},{},[161]);

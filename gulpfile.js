@@ -15,6 +15,7 @@ var config = {
     paths: {
         html: './src/*.html',
         js: './src/**/*.js',
+        images: './src/images/*',
         mainJs: './src/main.js',
         css: [
           './node_modules/bootstrap/dist/css/bootstrap.min.css',
@@ -63,6 +64,15 @@ gulp.task('css', () =>{
         .pipe(gulp.dest(config.paths.dist + '/css'))
 })
 
+gulp.task('images', () => {
+    gulp.src(config.paths.images)
+        .pipe(gulp.dest(config.paths.dist + '/images'))
+        .pipe(connect.reload())
+
+    gulp.src('./src/favicon.ico')
+        .pipe(gulp.dest(config.paths.dist))
+})
+
 gulp.task('lint', () => {
     // make sure to return - to see errors in console
     return gulp.src(config.paths.js)
@@ -75,4 +85,4 @@ gulp.task('watch', () => {
     gulp.watch(config.paths.js, ['js']);
 })
 
-gulp.task('default', ['html', 'js', 'css', 'lint', 'open', 'watch']);
+gulp.task('default', ['html', 'js', 'css', 'images', 'lint', 'open', 'watch']);
