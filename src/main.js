@@ -3,6 +3,7 @@ var React = require('react');
 var Home = require('./components/homePage');
 var About = require('./components/about/aboutPage');
 var Header = require('./components/common/header');
+var Authors = require('./components/authors/authorPage');
 
 // a way to have use strict in a block of a code IIFE
 // the reason why it can not be global is because of global jQuery assignment
@@ -16,8 +17,9 @@ var Header = require('./components/common/header');
 
             switch (this.props.route) {
                 case 'about':
-                    Child = About;
-                    break;
+                    Child = About; break;
+                case 'authors':
+                    Child = Authors; break;
                 default:
                     Child = Home;
             }

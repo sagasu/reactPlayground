@@ -37,6 +37,7 @@
     "gulp-open": "^2.0.0",
     "jquery": "^2.1.4",
     "jsx-chai": "^4.0.0",
+    "lodash": "^4.13.1",
     "mocha": "^2.5.3",
     "react": "^0.13.3",
     "react-addons-test-utils": "^15.1.0",
