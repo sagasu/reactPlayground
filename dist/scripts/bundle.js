@@ -29029,6 +29029,33 @@ module.exports = require('./lib/React');
 
 var React = require('react');
 
+var About = React.createClass({displayName: "About",
+    render: function() {
+        return (
+            React.createElement("div", null, 
+                React.createElement("h1", null, "About"), 
+                React.createElement("p", null, "This application uses the following technology"), 
+                React.createElement("ul", null, 
+                    React.createElement("li", null, "React"), 
+                    React.createElement("li", null, "React Router"), 
+                    React.createElement("li", null, "Flux"), 
+                    React.createElement("li", null, "Node"), 
+                    React.createElement("li", null, "Gulp"), 
+                    React.createElement("li", null, "Browserify"), 
+                    React.createElement("li", null, "Bootstrap")
+                )
+            )
+        );
+    }
+});
+
+module.exports = About;
+
+},{"react":157}],159:[function(require,module,exports){
+"use strict";
+
+var React = require('react');
+
 var Home = React.createClass({displayName: "Home",
    render: function() {
        return (
@@ -29042,12 +29069,45 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":157}],159:[function(require,module,exports){
+},{"react":157}],160:[function(require,module,exports){
 $ = jQuery = require('jquery'); // unfortunately bootstrap requires jquery to be acesable globally :(
 var React = require('react');
 var Home = require('./components/homePage');
+var About = require('./components/about/aboutPage');
 
-// This is old way from react@0.13.3
-React.render(React.createElement(Home, null), document.getElementById('app'));
+// a way to have use strict in a block of a code IIFE
+// the reason why it can not be global is because of global jQuery assignment
+(function (win) {
+    "use strict"
 
-},{"./components/homePage":158,"jquery":1,"react":157}]},{},[159]);
+    var App = React.createClass({displayName: "App",
+        // You can not use arrow function here, because this version of react has problems with handling es6
+        render: function() {
+            var Child;
+
+            switch (this.props.route) {
+                case 'about':
+                    Child = About;
+                    break;
+                default:
+                    Child = Home;
+            }
+            return (
+                React.createElement("div", null, 
+                    React.createElement(Child, null)
+                )
+            )
+        }
+    });
+
+    function render() {
+        var route = win.location.hash.substr(1);
+        React.render(React.createElement(App, {route: route}), document.getElementById('app'));
+    }
+
+    // Event that is raised when a hash is changed in URL
+    win.addEventListener('hashchange', render);
+    render();
+}(window));
+
+},{"./components/about/aboutPage":158,"./components/homePage":159,"jquery":1,"react":157}]},{},[160]);
